@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1ec86f42-8ca2-46d0-83d8-52edadd45217" name="Default" comment="" />
+    <list default="true" id="1ec86f42-8ca2-46d0-83d8-52edadd45217" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/music/Din Shagna Da Priyanka Weds Kunal Krazzy Wedding Wedding Reels YouTube Shorts - Krazzy Wedding (128k).mp3" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -12,11 +16,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="193">
-              <caret line="84" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="220" selection-end-column="7" />
+            <state relative-caret-position="560">
+              <caret line="215" column="113" lean-forward="false" selection-start-line="215" selection-start-column="113" selection-end-line="215" selection-end-column="113" />
               <folding />
             </state>
           </provider>
@@ -25,18 +29,18 @@
       <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="235">
-              <caret line="337" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="1082" selection-end-column="1" />
+            <state relative-caret-position="231">
+              <caret line="344" column="23" lean-forward="false" selection-start-line="344" selection-start-column="23" selection-end-line="344" selection-end-column="23" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="script.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="script.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/script.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="945">
-              <caret line="45" column="1" lean-forward="true" selection-start-line="45" selection-start-column="1" selection-end-line="45" selection-end-column="1" />
+            <state relative-caret-position="241">
+              <caret line="23" column="13" lean-forward="false" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
               <folding>
                 <marker date="1778778458524" expanded="true" signature="1890:1909" ph="..." />
                 <marker date="1778778458524" expanded="true" signature="1910:2065" ph="..." />
@@ -59,6 +63,9 @@
       <find>wedd</find>
       <find>calgary</find>
       <find>couple</find>
+      <find>musi</find>
+      <find>musicwedd</find>
+      <find>music</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -68,8 +75,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/script.js" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/style.css" />
+        <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
   </component>
@@ -153,8 +160,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\khade\PycharmProjects\wedding_invitation\images" />
       <recent name="C:\Users\khade\PycharmProjects\wedding_invitation\music" />
+      <recent name="C:\Users\khade\PycharmProjects\wedding_invitation\images" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -354,7 +361,7 @@
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3298969" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5463917" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -528,26 +535,18 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="84" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="220" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="337" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="1082" selection-end-column="1" />
+        <state relative-caret-position="231">
+          <caret line="344" column="23" lean-forward="false" selection-start-line="344" selection-start-column="23" selection-end-line="344" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="945">
-          <caret line="45" column="1" lean-forward="true" selection-start-line="45" selection-start-column="1" selection-end-line="45" selection-end-column="1" />
+        <state relative-caret-position="241">
+          <caret line="23" column="13" lean-forward="false" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
           <folding>
             <marker date="1778778458524" expanded="true" signature="1890:1909" ph="..." />
             <marker date="1778778458524" expanded="true" signature="1910:2065" ph="..." />
@@ -556,6 +555,14 @@
             <marker date="1778778458524" expanded="true" signature="2870:3011" ph="..." />
             <marker date="1778778458524" expanded="true" signature="3052:3193" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="560">
+          <caret line="215" column="113" lean-forward="false" selection-start-line="215" selection-start-column="113" selection-end-line="215" selection-end-column="113" />
+          <folding />
         </state>
       </provider>
     </entry>
