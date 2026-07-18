@@ -1,0 +1,1083 @@
+/* -------------------------------
+   RESET & GLOBAL STYLES
+-------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(145deg, #fff9f7 0%, #fff2ef 100%);
+    font-family: 'Quicksand', sans-serif;
+    color: #4a3b32;
+    line-height: 1.5;
+    scroll-behavior: smooth;
+}
+
+/* -------------------------------
+   REALISTIC PASTEL PINK CURTAIN OVERLAY
+-------------------------------- */
+.curtain-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+/* Curtain Left Panel - Pastel Pink */
+.curtain-left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(110deg,
+        #fde2e6 0%,
+        #f8d4da 30%,
+        #f0c4ca 60%,
+        #e8b4ba 100%);
+    transition: transform 1.8s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 2;
+    transform-origin: left;
+    box-shadow: 5px 0 15px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+/* Curtain Right Panel - Pastel Pink */
+.curtain-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(250deg,
+        #fde2e6 0%,
+        #f8d4da 30%,
+        #f0c4ca 60%,
+        #e8b4ba 100%);
+    transition: transform 1.8s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 2;
+    transform-origin: right;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+/* Curtain Pleats / Folds - Creates fabric look */
+.curtain-left::before,
+.curtain-right::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        90deg,
+        transparent 0px,
+        transparent 20px,
+        rgba(0,0,0,0.04) 20px,
+        rgba(0,0,0,0.04) 23px,
+        transparent 23px,
+        transparent 43px,
+        rgba(0,0,0,0.03) 43px,
+        rgba(0,0,0,0.03) 46px,
+        transparent 46px,
+        transparent 66px
+    );
+    pointer-events: none;
+}
+
+/* Soft drape lines - Vertical fabric texture */
+.curtain-left::after,
+.curtain-right::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        0deg,
+        rgba(255,255,255,0.2) 0px,
+        rgba(255,255,255,0.2) 2px,
+        transparent 2px,
+        transparent 10px
+    );
+    pointer-events: none;
+}
+
+/* Curtain Rod - Gold/Brass */
+.curtain-overlay::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 18px;
+    background: linear-gradient(180deg, #E8D5B7 0%, #D4C4A0 50%, #C2B089 100%);
+    z-index: 20;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+/* Decorative rod finials (end caps) */
+.curtain-overlay .rod-left {
+    position: absolute;
+    top: -5px;
+    left: -10px;
+    width: 25px;
+    height: 28px;
+    background: radial-gradient(circle, #E8D5B7, #C2B089);
+    border-radius: 50%;
+    z-index: 21;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.curtain-overlay .rod-right {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    width: 25px;
+    height: 28px;
+    background: radial-gradient(circle, #E8D5B7, #C2B089);
+    border-radius: 50%;
+    z-index: 21;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* Curtain rings - Gold */
+.curtain-ring {
+    position: absolute;
+    top: 5px;
+    width: 16px;
+    height: 16px;
+    background: radial-gradient(circle, #F0E0C0, #D4C4A0);
+    border-radius: 50%;
+    z-index: 22;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+/* Ring positions */
+.ring-1 { left: 8%; }
+.ring-2 { left: 16%; }
+.ring-3 { left: 24%; }
+.ring-4 { left: 32%; }
+.ring-5 { left: 40%; }
+.ring-6 { left: 48%; }
+.ring-7 { left: 56%; }
+.ring-8 { left: 64%; }
+.ring-9 { left: 72%; }
+.ring-10 { left: 80%; }
+.ring-11 { left: 88%; }
+
+/* Curtain opening animation */
+.curtain-overlay.open .curtain-left {
+    transform: translateX(-100%);
+    transition: transform 1.5s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.curtain-overlay.open .curtain-right {
+    transform: translateX(100%);
+    transition: transform 1.5s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+/* Curtain content (text on curtain) */
+.curtain-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 15;
+    width: 80%;
+    max-width: 600px;
+    animation: fadeInContent 0.8s ease-out;
+}
+
+.curtain-invite-text {
+    background: rgba(255, 252, 250, 0.92);
+    backdrop-filter: blur(12px);
+    padding: 50px 35px;
+    border-radius: 60px;
+    border: 1px solid rgba(240, 196, 202, 0.5);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.curtain-bismillah {
+    font-family: 'Amiri', serif;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #e8b4ba;
+}
+
+.curtain-welcome {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3rem;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+    color: #b16878;
+}
+
+.curtain-names {
+    font-family: 'Lucy Rose', 'Great Vibes', cursive;
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+    color: #bc7a88;
+}
+
+/* "Open Invitation" Button - Calgary Font */
+.curtain-button {
+    display: inline-block;
+    background: linear-gradient(135deg, #f5cdd2, #e8b4b8);
+    color: #6f3e48;
+    padding: 15px 40px;
+    border-radius: 50px;
+    font-family: 'Calgary', 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.curtain-button:hover {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, #f8d4da, #f0c4ca);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+.curtain-button i {
+    margin: 0 8px;
+}
+
+.curtain-tap {
+    font-size: 0.9rem;
+    opacity: 0.7;
+    letter-spacing: 2px;
+    color: #bc7a88;
+}
+
+/* Soft tassels on sides - Pastel pink */
+.curtain-left .tassel {
+    position: absolute;
+    bottom: 40px;
+    right: 25px;
+    width: 6px;
+    height: 50px;
+    background: linear-gradient(180deg, #f0c4ca, #e8b4ba);
+    border-radius: 3px;
+    z-index: 25;
+}
+
+.curtain-left .tassel::after {
+    content: '🌸';
+    position: absolute;
+    bottom: -18px;
+    left: -10px;
+    font-size: 18px;
+    color: #e8b4ba;
+}
+
+.curtain-right .tassel {
+    position: absolute;
+    bottom: 40px;
+    left: 25px;
+    width: 6px;
+    height: 50px;
+    background: linear-gradient(180deg, #f0c4ca, #e8b4ba);
+    border-radius: 3px;
+    z-index: 25;
+}
+
+.curtain-right .tassel::after {
+    content: '🌸';
+    position: absolute;
+    bottom: -18px;
+    right: -10px;
+    font-size: 18px;
+    color: #e8b4ba;
+}
+
+/* Main content - initially hidden */
+.main-content {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.8s ease-in-out 1.2s;
+}
+
+.main-content.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Animation for content fade in */
+@keyframes fadeInContent {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.96);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+/* Sparkle animation on curtain */
+@keyframes softSparkle {
+    0%, 100% { opacity: 0.4; transform: scale(1); }
+    50% { opacity: 0.8; transform: scale(1.1); }
+}
+
+/* Responsive curtain */
+@media (max-width: 768px) {
+    .curtain-bismillah {
+        font-size: 1.5rem;
+    }
+    .curtain-welcome {
+        font-size: 2rem;
+    }
+    .curtain-names {
+        font-size: 1.8rem;
+    }
+    .curtain-button {
+        padding: 12px 30px;
+        font-size: 1rem;
+    }
+    .curtain-invite-text {
+        padding: 30px 20px;
+    }
+    .curtain-left .tassel,
+    .curtain-right .tassel {
+        display: none;
+    }
+    .curtain-ring {
+        display: none;
+    }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #ffe6e2;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #e8b4b8;
+    border-radius: 20px;
+}
+
+/* Container for max-width */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* Section spacing */
+section {
+    padding: 80px 20px;
+    position: relative;
+}
+
+/* Headings styling */
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+}
+
+h2 {
+    font-size: 2.6rem;
+    color: #b35d6e;
+    margin-bottom: 50px;
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+}
+
+h2:after {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70px;
+    height: 2px;
+    background: linear-gradient(90deg, #f3bfc5, #e6a1ab);
+    border-radius: 2px;
+}
+
+/* Button styling */
+.btn-modern {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: #f5cdd2;
+    color: #6f3e48;
+    padding: 14px 34px;
+    border-radius: 60px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.15rem;
+    transition: all 0.3s ease;
+    border: 1px solid #ffe7e4;
+    box-shadow: 0 8px 18px rgba(179, 93, 110, 0.1);
+    backdrop-filter: blur(4px);
+}
+
+.btn-modern i {
+    font-size: 1.2rem;
+    transition: transform 0.2s;
+}
+
+.btn-modern:hover {
+    background: #e2b5bc;
+    color: #442c31;
+    border-color: #fbd9d4;
+    transform: scale(1.02);
+    box-shadow: 0 12px 22px rgba(179, 93, 110, 0.2);
+}
+
+.btn-modern:hover i {
+    transform: translateX(4px);
+}
+
+/* -------------------------------
+   HERO SECTION - UPDATED (BOX INCLUDES ALL CONTENT)
+-------------------------------- */
+.hero {
+    min-height: 100vh;
+    background: url('images/bg2.jpeg');
+    background-size: cover;
+    background-position: center 25%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 20px;
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg,
+        rgba(0, 0, 0, 0.2) 0%,
+        rgba(0, 0, 0, 0.1) 50%,
+        rgba(0, 0, 0, 0.25) 100%);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 950px;
+    width: 90%;
+    background: rgba(255, 252, 250, 0.9);
+    backdrop-filter: blur(10px);
+    border-radius: 68px;
+    padding: 55px 45px;
+    box-shadow: 0 30px 45px -20px rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 240, 235, 0.8);
+    transition: all 0.3s;
+}
+
+/* Make sure all content stays inside the box */
+.hero-content > * {
+    max-width: 100%;
+}
+
+/* -------------------------------
+   COUPLE NAMES - PRIESTACY FONT
+-------------------------------- */
+.couple-names-stacked {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0 15px;
+    width: 100%;
+}
+
+.bride-name {
+    font-family: 'Priestacy', 'Great Vibes', cursive;
+    font-size: 4.2rem;
+    font-weight: 400;
+    color: #924c5c;
+    text-align: center;
+    line-height: 1.2;
+    letter-spacing: 1px;
+}
+
+.groom-name {
+    font-family: 'Priestacy', 'Great Vibes', cursive;
+    font-size: 4.2rem;
+    font-weight: 400;
+    color: #924c5c;
+    text-align: center;
+    line-height: 1.2;
+    letter-spacing: 1px;
+}
+
+.ampersand-stacked {
+    font-family: 'Priestacy', 'Great Vibes', cursive;
+    font-size: 3.2rem;
+    font-weight: 400;
+    color: #bc7a88;
+    text-align: center;
+    line-height: 1;
+}
+
+/* Responsive for calligraphy fonts */
+@media (max-width: 780px) {
+    .bride-name, .groom-name {
+        font-size: 3rem;
+    }
+    .ampersand-stacked {
+        font-size: 2.4rem;
+    }
+    .couple-names-stacked {
+        gap: 8px;
+    }
+}
+
+@media (max-width: 550px) {
+    .bride-name, .groom-name {
+        font-size: 2.2rem;
+    }
+    .ampersand-stacked {
+        font-size: 1.8rem;
+    }
+    .couple-names-stacked {
+        gap: 5px;
+    }
+}
+
+/* -------------------------------
+   BISMILLAH STYLING - LIGHT PINK COLOR
+-------------------------------- */
+.bismillah {
+    font-family: 'Amiri', 'Traditional Arabic', 'Times New Roman', serif;
+    font-size: 2rem;
+    color: #e8b4ba;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+
+.bismillah-translation {
+    font-size: 0.85rem;
+    color: #bc7a88;
+    letter-spacing: 1px;
+    margin-bottom: 35px;
+    font-style: italic;
+    border-top: 1px dashed #e2a3ad;
+    border-bottom: 1px dashed #e2a3ad;
+    display: inline-block;
+    padding: 5px 15px;
+}
+
+/* -------------------------------
+   PARENTS SECTION - UPDATED FONTS
+-------------------------------- */
+.parents-section {
+    background: linear-gradient(135deg, #fff5f2 0%, #ffece8 100%);
+    padding: 80px 20px;
+    position: relative;
+}
+
+.parents-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: 40px;
+    margin: 50px 0 40px;
+}
+
+.parent-card {
+    flex: 1;
+    min-width: 300px;
+    background: #ffffff;
+    border-radius: 48px;
+    padding: 45px 30px;
+    text-align: center;
+    transition: all 0.4s ease;
+    box-shadow: 0 20px 40px rgba(171, 111, 111, 0.1);
+    border: 1px solid #ffebe6;
+    position: relative;
+    overflow: hidden;
+}
+
+.parent-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, #f5cdd2, #e2a3ad);
+}
+
+.parent-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 30px 50px rgba(171, 111, 111, 0.15);
+}
+
+.parent-icon {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+}
+
+.bride-card .parent-icon {
+    color: #e8a0ad;
+}
+
+.groom-card .parent-icon {
+    color: #a8c0c5;
+}
+
+/* "Daughter of" and "Son of" - Quicksand Font */
+.parent-card h3 {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.3rem;
+    color: #b16878;
+    margin-bottom: 20px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.parent-names {
+    margin: 20px 0;
+}
+
+/* Parent Names - Brittany Font */
+.parent-name-main {
+    font-family: 'Brittany', 'Great Vibes', cursive;
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: #5c3d44;
+    margin: 8px 0;
+    letter-spacing: 1px;
+}
+
+.parent-relation {
+    font-size: 0.95rem;
+    color: #a87a82;
+    margin: 15px 0;
+    font-style: italic;
+}
+
+.parent-blessing {
+    background: linear-gradient(135deg, #fef5f2, #fde8e3);
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 40px;
+    font-size: 0.85rem;
+    color: #bc6a78;
+    font-weight: 600;
+    margin-top: 15px;
+}
+
+.parent-blessing i {
+    margin-right: 8px;
+    color: #e2a3ad;
+}
+
+.heart-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: #e2a3ad;
+}
+
+.quran-verse {
+    text-align: center;
+    margin-top: 50px;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 60px;
+    backdrop-filter: blur(5px);
+}
+
+.quran-verse i {
+    font-size: 2rem;
+    color: #e2a3ad;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.quran-verse p {
+    font-size: 1.2rem;
+    color: #b16878;
+    font-style: italic;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.quran-verse span {
+    font-size: 0.95rem;
+    color: #c98f9a;
+    font-weight: 500;
+}
+
+/* -------------------------------
+   DETAILS SECTION
+-------------------------------- */
+.details-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.detail-card {
+    flex: 1;
+    min-width: 220px;
+    background: #fffbf9;
+    border-radius: 48px;
+    padding: 28px 20px;
+    text-align: center;
+    transition: all 0.25s;
+    box-shadow: 0 10px 20px rgba(171, 111, 111, 0.05);
+    border: 1px solid #ffe2db;
+}
+
+.detail-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(171, 111, 111, 0.1);
+}
+
+.detail-card i {
+    font-size: 2.8rem;
+    color: #e2a3ad;
+    margin-bottom: 16px;
+}
+
+.detail-card h3 {
+    font-size: 1.7rem;
+    color: #b16878;
+    margin-bottom: 8px;
+}
+
+.detail-card p {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #5c3d44;
+}
+
+.detail-card small {
+    color: #a87a82;
+    font-size: 0.9rem;
+}
+
+.romantic-quote {
+    margin-top: 36px;
+    font-size: 1.05rem;
+    color: #b2707c;
+    font-style: italic;
+    text-align: center;
+}
+
+/* -------------------------------
+   COUNTDOWN SECTION - UPDATED FONT
+-------------------------------- */
+.countdown-section h2 {
+    font-family: 'Calgary', 'Cormorant Garamond', serif;
+    font-size: 2.6rem;
+    color: #b35d6e;
+    margin-bottom: 50px;
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+}
+
+.countdown-card {
+    background: linear-gradient(135deg, #fff7f5, #ffefea);
+    border-radius: 70px;
+    padding: 32px 24px;
+    max-width: 780px;
+    margin: 0 auto;
+    box-shadow: 0 20px 35px rgba(167, 102, 102, 0.1);
+}
+
+.countdown-flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+}
+
+.countdown-unit {
+    background: #fdeae6;
+    border-radius: 60px;
+    padding: 14px 24px;
+    min-width: 110px;
+    box-shadow: inset 0 0 0 1px #fff4f0, 0 6px 12px rgba(0, 0, 0, 0.02);
+    text-align: center;
+}
+
+.countdown-number {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1;
+    color: #b95468;
+    font-family: 'Playfair Display', monospace;
+}
+
+.countdown-label {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #b27783;
+    font-weight: 500;
+}
+
+.countdown-subtitle {
+    margin-top: 28px;
+    font-size: 0.95rem;
+    opacity: 0.8;
+    text-align: center;
+}
+
+/* -------------------------------
+   LOCATION SECTION - UPDATED FONT
+-------------------------------- */
+.location h2 {
+    font-family: 'Calgary', 'Cormorant Garamond', serif;
+    font-size: 2.6rem;
+    color: #b35d6e;
+    margin-bottom: 50px;
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+}
+
+.location {
+    text-align: center;
+    background: linear-gradient(to bottom, #fffaf8, #fff4f0);
+}
+
+.venue-name {
+    background: #f9e4df;
+    display: inline-block;
+    padding: 8px 28px;
+    border-radius: 60px;
+    font-weight: 600;
+    margin-bottom: 24px;
+    color: #bc6a78;
+}
+
+.venue-info {
+    margin-top: 30px;
+    font-size: 0.95rem;
+}
+
+/* -------------------------------
+   FOOTER
+-------------------------------- */
+footer {
+    background: #fae6e2;
+    padding: 40px 20px;
+    text-align: center;
+    font-size: 1.1rem;
+    color: #a05f6b;
+    border-top-left-radius: 48px;
+    border-top-right-radius: 48px;
+    margin-top: 20px;
+}
+
+footer i {
+    color: #e68b9c;
+    margin: 0 4px;
+}
+
+.footer-heart {
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+}
+
+.footer-names {
+    margin-top: 10px;
+    font-size: 0.85rem;
+}
+
+.footer-message {
+    margin-top: 8px;
+    font-size: 0.75rem;
+}
+
+.footer-dua {
+    margin-top: 15px;
+    font-size: 0.8rem;
+    color: #bc7a88;
+    font-weight: 500;
+}
+
+/* -------------------------------
+   RESPONSIVE DESIGN
+-------------------------------- */
+@media (max-width: 780px) {
+    section {
+        padding: 60px 16px;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .countdown-section h2 {
+        font-size: 2rem;
+    }
+
+    .location h2 {
+        font-size: 2rem;
+    }
+
+    .hero-content {
+        padding: 35px 25px;
+        width: 95%;
+    }
+
+    .hero-tagline {
+        font-size: 1rem;
+    }
+
+    .hero-request {
+        font-size: 0.9rem;
+    }
+
+    .countdown-unit {
+        padding: 8px 15px;
+        min-width: 75px;
+    }
+
+    .countdown-number {
+        font-size: 2rem;
+    }
+
+    .detail-card p {
+        font-size: 1rem;
+    }
+
+    .parent-card {
+        min-width: 280px;
+        padding: 35px 25px;
+    }
+
+    .parent-name-main {
+        font-size: 1.5rem;
+    }
+
+    .heart-divider {
+        display: none;
+    }
+
+    .parents-container {
+        gap: 25px;
+    }
+}
+
+@media (max-width: 550px) {
+    .bride-name, .groom-name {
+        white-space: normal;
+    }
+}
+
+@media (max-width: 540px) {
+    .details-grid {
+        gap: 20px;
+    }
+
+    .countdown-unit {
+        min-width: 65px;
+    }
+
+    .countdown-number {
+        font-size: 1.8rem;
+    }
+
+    .btn-modern {
+        padding: 12px 24px;
+        font-size: 1rem;
+    }
+
+    .detail-card h3 {
+        font-size: 1.4rem;
+    }
+
+    .parent-card {
+        min-width: 100%;
+        padding: 30px 20px;
+    }
+
+    .parent-name-main {
+        font-size: 1.3rem;
+    }
+
+    .quran-verse p {
+        font-size: 1rem;
+    }
+
+    .quran-verse {
+        padding: 20px;
+    }
+
+    .hero-content {
+        padding: 25px 20px;
+        border-radius: 40px;
+    }
+
+    .bismillah {
+        font-size: 1.5rem;
+    }
+
+    .bismillah-translation {
+        font-size: 0.7rem;
+    }
+
+    .countdown-section h2 {
+        font-size: 1.6rem;
+    }
+
+    .location h2 {
+        font-size: 1.6rem;
+    }
+}
+
+/* Fade-in animation for cards */
+.detail-card, .countdown-card, .hero-content, .parent-card {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.7s cubic-bezier(0.2, 0.9, 0.4, 1.1), transform 0.6s ease;
+}
+
+.detail-card.visible, .countdown-card.visible, .hero-content.visible, .parent-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
